@@ -1061,6 +1061,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lookSensitivity: 2
   smoothing: 2
+  maxLookRotation: 80
 --- !u!1001 &1843523582
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -12,4 +12,14 @@ public class Gun : ScriptableObject
     public float minDamage;
     public float maxDamage;
     public float maxRange;
+
+    public virtual void OnMouseDown(Transform cameraPos)
+    {
+        
+    }
+
+    public virtual void OnMouseHold(Transform cameraPos)
+    {
+
+    }
 }

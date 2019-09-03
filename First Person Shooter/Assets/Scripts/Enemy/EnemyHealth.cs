@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class EnemyHealth : MonoBehaviour, IDamageable
 {
     [SerializeField] EnemyStats stats;
-    float currentHealth;
+    int currentHealth;
     [SerializeField] Slider healthbar;
     [SerializeField] Image healthbarFill;
     [SerializeField] Color maxHealthColor;
@@ -20,7 +20,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
 
     public void DealDamage(float damage)
     {
-        currentHealth -= damage;
+        currentHealth = Mathf.FloorToInt(currentHealth - damage);
         CheckIfDead();
         SetHealthbarUI();
     }
@@ -35,7 +35,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
 
     private void SetHealthbarUI()
     {
-        healthbar.value = Mathf.FloorToInt(currentHealth);
+        healthbar.value = currentHealth;
         healthbarFill.color = Color.Lerp(lowHealthColor, maxHealthColor, HealthPercentage());
     }
 

@@ -7,6 +7,7 @@ public class PlayerCameraController : MonoBehaviour
 {
     [SerializeField] float lookSensitivity;
     [SerializeField] float smoothing;
+    [SerializeField] int maxLookRotation;
     GameObject player;
     Vector2 smoothedVel;
     Vector2 currentLookingPos;
@@ -35,6 +36,7 @@ public class PlayerCameraController : MonoBehaviour
 
         currentLookingPos += smoothedVel;
 
+        currentLookingPos.y = Mathf.Clamp(currentLookingPos.y, -maxLookRotation, maxLookRotation);
         transform.localRotation = Quaternion.AngleAxis(-currentLookingPos.y, Vector3.right);
         player.transform.localRotation = Quaternion.AngleAxis(currentLookingPos.x, player.transform.up);
     }
