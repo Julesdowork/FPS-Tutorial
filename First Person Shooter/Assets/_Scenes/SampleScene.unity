@@ -193,6 +193,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 347939360, guid: cd6bb2ceb25bfe64a8e232ce6186e4f6, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 347939360, guid: cd6bb2ceb25bfe64a8e232ce6186e4f6, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd6bb2ceb25bfe64a8e232ce6186e4f6, type: 3}
 --- !u!1001 &424355293
@@ -260,6 +268,14 @@ PrefabInstance:
     - target: {fileID: 4255970539311209803, guid: cd6bb2ceb25bfe64a8e232ce6186e4f6,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 347939360, guid: cd6bb2ceb25bfe64a8e232ce6186e4f6, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 347939360, guid: cd6bb2ceb25bfe64a8e232ce6186e4f6, type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1344,6 +1360,30 @@ PrefabInstance:
     - target: {fileID: 4255970539311209803, guid: cd6bb2ceb25bfe64a8e232ce6186e4f6,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1771607843, guid: cd6bb2ceb25bfe64a8e232ce6186e4f6, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 963194227}
+    - target: {fileID: 347939360, guid: cd6bb2ceb25bfe64a8e232ce6186e4f6, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 347939360, guid: cd6bb2ceb25bfe64a8e232ce6186e4f6, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 347939361, guid: cd6bb2ceb25bfe64a8e232ce6186e4f6, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 347939361, guid: cd6bb2ceb25bfe64a8e232ce6186e4f6, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 347939361, guid: cd6bb2ceb25bfe64a8e232ce6186e4f6, type: 3}
+      propertyPath: m_Color.b
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

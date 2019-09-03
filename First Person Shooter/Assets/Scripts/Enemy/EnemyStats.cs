@@ -6,5 +6,5 @@ using UnityEngine;
 public class EnemyStats : ScriptableObject
 {
     public string enemyName;
-    public int maxHealth;
+    public float maxHealth;
 }
