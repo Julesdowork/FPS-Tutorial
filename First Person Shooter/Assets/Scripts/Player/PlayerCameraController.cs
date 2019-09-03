@@ -47,8 +47,11 @@ public class PlayerCameraController : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(transform.position, transform.forward, out hit, 200f))
             {
-                Debug.DrawLine(transform.position, hit.point, Color.red, 1f);
-                Debug.Log(hit.collider.name);
+                IDamageable damageable = hit.collider.GetComponent<IDamageable>();
+                if (damageable != null)
+                {
+                    damageable.DealDamage(40);
+                }
             }
         }
     }
