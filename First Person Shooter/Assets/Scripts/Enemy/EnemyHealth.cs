@@ -11,6 +11,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     [SerializeField] Image healthbarFill;
     [SerializeField] Color maxHealthColor;
     [SerializeField] Color lowHealthColor;
+    [SerializeField] GameObject damageTextPrefab;
 
     void Start()
     {
@@ -21,6 +22,10 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     public void DealDamage(float damage)
     {
         currentHealth = Mathf.FloorToInt(currentHealth - damage);
+        GameObject damageText = Instantiate(damageTextPrefab, transform.position, Quaternion.identity);
+        damageText.transform.SetParent(transform, false);
+        damageText.GetComponent<DamageText>().Initialize(Mathf.FloorToInt(damage));
+
         CheckIfDead();
         SetHealthbarUI();
     }

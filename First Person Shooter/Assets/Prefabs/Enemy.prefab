@@ -517,3 +517,5 @@ MonoBehaviour:
   healthbarFill: {fileID: 347939361}
   maxHealthColor: {r: 0, g: 1, b: 0, a: 1}
   lowHealthColor: {r: 1, g: 0, b: 0, a: 1}
+  damageTextPrefab: {fileID: 5231493379890292630, guid: 8c9c42ab5c38bbd47ac8bedd9b477199,
+    type: 3}

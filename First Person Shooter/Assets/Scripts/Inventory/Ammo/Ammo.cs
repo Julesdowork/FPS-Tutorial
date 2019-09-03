@@ -9,8 +9,7 @@ public class Ammo : MonoBehaviour
     {
         if (collision.collider.GetComponent<PlayerMovement>() != null)
         {
-            AmmoManager.instance.AddAmmo(amount, AmmoType.LIGHT);   // TODO change this to type
-            AmmoManager.instance.AddAmmo(5, AmmoType.HEAVY);    // TODO delete this and make a unique prefab for different types of ammo
+            AmmoManager.instance.AddAmmo(amount, type);
             Destroy(gameObject);
         }
     }
