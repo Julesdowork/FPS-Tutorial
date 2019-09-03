@@ -17,3 +17,4 @@ MonoBehaviour:
   minDamage: 40
   maxDamage: 40
   maxRange: 200
+  ammoType: 2

@@ -12,6 +12,7 @@ public class Gun : ScriptableObject
     public float minDamage;
     public float maxDamage;
     public float maxRange;
+    public AmmoType ammoType;
 
     public virtual void OnLeftMouseDown(Transform cameraPos) {}
     public virtual void OnLeftMouseHold(Transform cameraPos) {}
@@ -19,7 +20,7 @@ public class Gun : ScriptableObject
 
     protected void Fire(Transform cameraPos)
     {
-        if (AmmoManager.instance.ConsumeAmmo())
+        if (AmmoManager.instance.ConsumeAmmo(ammoType))
         {
             RaycastHit hit;
             if (Physics.Raycast(cameraPos.position, cameraPos.forward, out hit, maxRange))
