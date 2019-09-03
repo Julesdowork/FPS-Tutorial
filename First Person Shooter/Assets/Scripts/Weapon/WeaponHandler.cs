@@ -33,17 +33,23 @@ public class WeaponHandler : MonoBehaviour
             currentGunPrefab = Instantiate(guns[1].prefab, transform);
             currentGun = guns[1];
         }
+
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            currentGun.OnRightMouseDown();
+        }
     }
 
     private void CheckForShooting()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            currentGun.OnMouseDown(cam);
+                currentGun.OnLeftMouseDown(cam);
         }
-        if (Input.GetMouseButton(0))
+        else if (Input.GetMouseButton(0))
         {
-            currentGun.OnMouseHold(cam);
+                currentGun.OnLeftMouseHold(cam);
         }
     }
 }
