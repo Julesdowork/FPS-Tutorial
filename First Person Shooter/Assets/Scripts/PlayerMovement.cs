@@ -29,7 +29,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
+        if (Input.GetButtonDown("Jump") && IsGrounded())
         {
             rb.AddForce(0, jumpForce, 0, ForceMode.Impulse);
         }
