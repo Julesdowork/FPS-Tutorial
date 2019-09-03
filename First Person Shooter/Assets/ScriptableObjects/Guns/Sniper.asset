@@ -9,8 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46fc59fd909d27e449ef6822b1bbb52c, type: 3}
-  m_Name: Enemy
+  m_Script: {fileID: 11500000, guid: c2afdd632c5d3e7468ebeef5f50efb00, type: 3}
+  m_Name: Sniper
   m_EditorClassIdentifier: 
-  enemyName: Enemy
-  maxHealth: 10
+  gunName: Sniper Rifle
+  prefab: {fileID: 7420292587649180415, guid: d68e0066f87e6a544aff94607abf38fd, type: 3}
+  minDamage: 40
+  maxDamage: 40
+  maxRange: 200

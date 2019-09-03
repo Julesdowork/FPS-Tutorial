@@ -23,7 +23,6 @@ public class PlayerCameraController : MonoBehaviour
     void Update()
     {
         RotateCamera();
-        CheckForShooting();
     }
 
     private void RotateCamera()
@@ -38,21 +37,5 @@ public class PlayerCameraController : MonoBehaviour
 
         transform.localRotation = Quaternion.AngleAxis(-currentLookingPos.y, Vector3.right);
         player.transform.localRotation = Quaternion.AngleAxis(currentLookingPos.x, player.transform.up);
-    }
-
-    private void CheckForShooting()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            RaycastHit hit;
-            if (Physics.Raycast(transform.position, transform.forward, out hit, 200f))
-            {
-                IDamageable damageable = hit.collider.GetComponent<IDamageable>();
-                if (damageable != null)
-                {
-                    damageable.DealDamage(40);
-                }
-            }
-        }
     }
 }
