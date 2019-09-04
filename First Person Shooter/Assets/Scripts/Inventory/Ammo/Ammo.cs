@@ -1,16 +1,22 @@
 ﻿using UnityEngine;
 
-public class Ammo : MonoBehaviour
+public class Ammo : MonoBehaviour, ILootable
 {
     [SerializeField] int amount;
     [SerializeField] AmmoType type;
 
-    void OnCollisionEnter(Collision collision)
+    public void OnLook()
     {
-        if (collision.collider.GetComponent<PlayerMovement>() != null)
-        {
-            AmmoManager.instance.AddAmmo(amount, type);
-            Destroy(gameObject);
-        }
+        Debug.Log($"Started looking at {type}");
+    }
+
+    public void OnInteract()
+    {
+        Debug.Log($"Picked up {amount} rounds of {type} ammo!");
+    }
+
+    public void OnLookAway()
+    {
+        Debug.Log($"Stopped looking at {type}");
     }
 }

@@ -7,7 +7,6 @@ public class AmmoManager : MonoBehaviour
 {
     public static AmmoManager instance;
 
-    [SerializeField] Text ammoText;
     Dictionary<AmmoType, int> ammoAmounts = new Dictionary<AmmoType, int>();
 
     private void Awake()
@@ -35,7 +34,6 @@ public class AmmoManager : MonoBehaviour
         if (ammoAmounts[aType] > 0)
         {
             ammoAmounts[aType]--;
-            UpdateAmmoUI();
             return true;
         }
         else
@@ -47,11 +45,5 @@ public class AmmoManager : MonoBehaviour
     public void AddAmmo(int value, AmmoType aType)
     {
         ammoAmounts[aType] += value;
-        UpdateAmmoUI();
-    }
-
-    private void UpdateAmmoUI()
-    {
-        //ammoText.text = "Ammo: " + ammoCount;
     }
 }
