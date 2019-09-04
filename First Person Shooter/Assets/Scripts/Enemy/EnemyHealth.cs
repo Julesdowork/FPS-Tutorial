@@ -9,8 +9,8 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     int currentHealth;
     [SerializeField] Slider healthbar;
     [SerializeField] Image healthbarFill;
-    [SerializeField] Color maxHealthColor;
-    [SerializeField] Color lowHealthColor;
+    [SerializeField] Color maxHealthColor = Color.green;
+    [SerializeField] Color lowHealthColor = Color.red;
     [SerializeField] GameObject damageTextPrefab;
 
     void Start()

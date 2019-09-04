@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] float speed;
-    [SerializeField] float jumpForce;
-    [SerializeField] float jumpRaycastDist;
+    [SerializeField] float speed = 5f;
+    [SerializeField] float jumpForce = 5f;
+    [SerializeField] float jumpRaycastDist = 1.1f;
 
     Rigidbody rb;
 

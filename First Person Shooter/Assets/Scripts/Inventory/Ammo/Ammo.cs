@@ -2,7 +2,7 @@
 
 public class Ammo : MonoBehaviour, ILootable
 {
-    [SerializeField] int amount;
+    [SerializeField] int amount = 0;
     [SerializeField] AmmoType type;
 
     public void OnLook()

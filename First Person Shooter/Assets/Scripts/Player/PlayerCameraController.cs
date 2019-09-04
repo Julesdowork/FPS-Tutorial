@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class PlayerCameraController : MonoBehaviour
 {
-    [SerializeField] float lookSensitivity;
-    [SerializeField] float smoothing;
-    [SerializeField] int maxLookRotation;
+    [SerializeField] float lookSensitivity = 2f;
+    [SerializeField] float smoothing = 2f;
+    [SerializeField] int maxLookRotation = 80;
     GameObject player;
     Vector2 smoothedVel;
     Vector2 currentLookingPos;

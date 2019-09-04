@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerCameraRaycasting : MonoBehaviour
 {
     ILootable currentTarget;
-    [SerializeField] float range;
+    [SerializeField] float range = 7f;
 
     void Update()
     {

@@ -30,5 +30,7 @@ public class WeaponHandler : MonoBehaviour
         }
         currentGun = gun;
         currentGunPrefab = Instantiate(gun.gameObject, transform);
+
+        AmmoManager.instance.ammoUI.UpdateAmmoType(currentGun);
     }
 }

@@ -5,7 +5,7 @@ using TMPro;
 
 public class DamageText : MonoBehaviour
 {
-    [SerializeField] float destroyTime;
+    [SerializeField] float destroyTime = 1f;
     // Don't need these if changing positions through animation
     //[SerializeField] Vector3 offset;
     //[SerializeField] Vector3 randomizeOffset;

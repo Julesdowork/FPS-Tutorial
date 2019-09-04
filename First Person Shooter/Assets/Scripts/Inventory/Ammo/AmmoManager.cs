@@ -8,8 +8,9 @@ public class AmmoManager : MonoBehaviour
     public static AmmoManager instance;
 
     Dictionary<AmmoType, int> ammoAmounts = new Dictionary<AmmoType, int>();
+    public AmmoUI ammoUI;
 
-    private void Awake()
+    void Awake()
     {
         if (instance == null)
         {
@@ -34,6 +35,7 @@ public class AmmoManager : MonoBehaviour
         if (ammoAmounts[aType] > 0)
         {
             ammoAmounts[aType]--;
+            ammoUI.UpdateAmmoCount(ammoAmounts[aType]);
             return true;
         }
         else
@@ -45,5 +47,11 @@ public class AmmoManager : MonoBehaviour
     public void AddAmmo(int value, AmmoType aType)
     {
         ammoAmounts[aType] += value;
+        ammoUI.UpdateAmmoCount(ammoAmounts[aType]);
+    }
+
+    public int GetAmmo(AmmoType aType)
+    {
+        return ammoAmounts[aType];
     }
 }
