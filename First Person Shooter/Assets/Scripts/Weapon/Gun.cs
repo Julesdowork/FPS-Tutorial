@@ -2,28 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Gun", menuName = "Gun")]
-public class Gun : ScriptableObject
+public abstract class Gun : MonoBehaviour
 {
     public string gunName;
-    public GameObject prefab;
+    public GameObject pickup;
 
     [Header("Stats")]
     public float minDamage;
     public float maxDamage;
     public float maxRange;
+    public float fireRate;      // shots per second (e.g.: 1 every sec)
     public AmmoType ammoType;
 
-    public virtual void OnLeftMouseDown(Transform cameraPos) {}
-    public virtual void OnLeftMouseHold(Transform cameraPos) {}
-    public virtual void OnRightMouseDown() {}
+    protected float timeOfLastShot;
 
-    protected void Fire(Transform cameraPos)
+    Transform camTransform;
+
+    private void Start()
+    {
+        camTransform = Camera.main.transform;
+    }
+
+    protected void Fire()
     {
         if (AmmoManager.instance.ConsumeAmmo(ammoType))
         {
             RaycastHit hit;
-            if (Physics.Raycast(cameraPos.position, cameraPos.forward, out hit, maxRange))
+            if (Physics.Raycast(camTransform.position, camTransform.forward, out hit, maxRange))
             {
                 IDamageable damageable = hit.collider.GetComponent<IDamageable>();
                 if (damageable != null)

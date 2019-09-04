@@ -4,52 +4,31 @@ using UnityEngine;
 
 public class WeaponHandler : MonoBehaviour
 {
-    [SerializeField] List<Gun> guns = new List<Gun>();
+    public static WeaponHandler instance;
+
     Gun currentGun;
     GameObject currentGunPrefab;
-    Transform cam;
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        cam = Camera.main.transform;
-        currentGunPrefab = Instantiate(guns[0].prefab, transform);
-        currentGun = guns[0];
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        CheckForShooting();
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (instance == null)
         {
-            Destroy(currentGunPrefab);
-            currentGunPrefab = Instantiate(guns[0].prefab, transform);
-            currentGun = guns[0];
+            instance = this;
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        else if (instance != this)
         {
-            Destroy(currentGunPrefab);
-            currentGunPrefab = Instantiate(guns[1].prefab, transform);
-            currentGun = guns[1];
-        }
-
-
-        if (Input.GetMouseButtonDown(1))
-        {
-            currentGun.OnRightMouseDown();
+            Destroy(this);
         }
     }
 
-    private void CheckForShooting()
+    public void PickUpGun(Gun gun)
     {
-        if (Input.GetMouseButtonDown(0))
+        if (currentGun != null)
         {
-                currentGun.OnLeftMouseDown(cam);
+            Instantiate(currentGun.pickup, transform.position + transform.forward, Quaternion.identity);
+            Destroy(currentGunPrefab);
         }
-        else if (Input.GetMouseButton(0))
-        {
-                currentGun.OnLeftMouseHold(cam);
-        }
+        currentGun = gun;
+        currentGunPrefab = Instantiate(gun.gameObject, transform);
     }
 }

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3477816802490394799}
-  - component: {fileID: 3408717996090807746}
+  - component: {fileID: 964988139028992289}
   m_Layer: 0
   m_Name: Pistol
   m_TagString: Untagged
@@ -33,7 +33,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3408717996090807746
+--- !u!114 &964988139028992289
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42,10 +42,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 2687390212417476647}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5baa52706dd268a40804f8445c3c1379, type: 3}
+  m_Script: {fileID: 11500000, guid: 0e9cdc5f181bd68429b0ff0c9ff48ba9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gun: {fileID: 11400000, guid: 5ca1bfcef49325449bc636b9cad641e2, type: 2}
+  gunName: Pistol
+  pickup: {fileID: 670030041960383324, guid: df2b19022f835c14f836aef24d75ac2a, type: 3}
+  minDamage: 1
+  maxDamage: 4
+  maxRange: 25
+  fireRate: 4
+  ammoType: 0
 --- !u!1 &4541030096019939232
 GameObject:
   m_ObjectHideFlags: 0

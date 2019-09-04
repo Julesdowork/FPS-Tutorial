@@ -12,7 +12,8 @@ public class Ammo : MonoBehaviour, ILootable
 
     public void OnInteract()
     {
-        Debug.Log($"Picked up {amount} rounds of {type} ammo!");
+        AmmoManager.instance.AddAmmo(amount, type);
+        Destroy(gameObject);
     }
 
     public void OnLookAway()

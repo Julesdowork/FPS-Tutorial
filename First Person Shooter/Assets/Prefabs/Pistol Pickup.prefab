@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 670030041960383324}
   m_LocalRotation: {x: 0.1844428, y: -0.1844428, z: -0.6826279, w: 0.6826279}
   m_LocalPosition: {x: 2.62551, y: 0.08, z: 9.274548}
-  m_LocalScale: {x: 2.0368, y: 2.0368, z: 2.0368}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4065885281690360315}
   - {fileID: 7845983472419597503}
@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5baa52706dd268a40804f8445c3c1379, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gun: {fileID: 11400000, guid: 5ca1bfcef49325449bc636b9cad641e2, type: 2}
+  gun: {fileID: 964988139028992289, guid: 31458fc312169b646a74ac3072d4afc7, type: 3}
 --- !u!65 &8514538186732259822
 BoxCollider:
   m_ObjectHideFlags: 0

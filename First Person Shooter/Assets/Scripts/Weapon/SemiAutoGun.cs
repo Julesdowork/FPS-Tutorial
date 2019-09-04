@@ -1,10 +1,16 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(fileName = "Semi-Automatic Gun", menuName = "Guns/Semi-Automatic Gun")]
 public class SemiAutoGun : Gun
 {
-    public override void OnLeftMouseDown(Transform cameraPos)
+    void Update()
     {
-        Fire(cameraPos);
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (Time.time - timeOfLastShot >= 1 / fireRate)
+            {
+                Fire();
+                timeOfLastShot = Time.time;
+            }
+        }
     }
 }
